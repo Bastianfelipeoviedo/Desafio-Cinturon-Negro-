@@ -1,0 +1,15 @@
+    <div ng-controller="Answers">
+      <h1 ng-bind="answers.question"></h1>
+      <h4 ng-bind="answers.description"></h4>
+      <table>
+        <tr ng-repeat="answer in answers.answers | orderBy: 'likes' | orderBy: 'created_at':true">
+          <td>
+            <p ng-bind="answer.name"></p>
+            <h3 ng-bind="answer.answer"></h3>
+            <h4 ng-bind="answer.details"></h4>
+          </td>
+          <td>{{answer.likes}} Likes</td>
+          <td><button ng-click="likeAnswer(answer._id)">Like!</button></td>
+        </tr>
+      </table>
+    </div>
